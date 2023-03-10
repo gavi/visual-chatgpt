@@ -801,7 +801,7 @@ class ConversationBot:
     def __init__(self):
         print("Initializing VisualChatGPT")
         self.llm = OpenAI(temperature=0)
-        self.edit = ImageEditing(device="cuda:0")
+        self.edit = ImageEditing(device="cuda:3")
         self.i2t = ImageCaptioning(device="cuda:0")
         self.t2i = T2I(device="cuda:1")
         self.image2canny = image2canny()
@@ -813,7 +813,7 @@ class ConversationBot:
         self.image2scribble = image2scribble()
         self.scribble2image = scribble2image(device="cuda:3")
         self.image2pose = image2pose()
-        self.pose2image = pose2image(device="cuda:3")
+        # self.pose2image = pose2image(device="cuda:3")
         # self.BLIPVQA = BLIPVQA(device="cuda:0")
         # self.image2seg = image2seg()
         # self.seg2image = seg2image(device="cuda:7")
@@ -888,9 +888,10 @@ class ConversationBot:
             Tool(name="Pose Detection On Image", func=self.image2pose.inference,
                  description="useful when you want to detect the human pose of the image. like: generate human poses of this image, or generate a pose image from this image. "
                              "The input to this tool should be a string, representing the image_path"),
-            Tool(name="Generate Image Condition On Pose Image", func=self.pose2image.inference,
-                 description="useful when you want to generate a new real image from both the user desciption and a human pose image. like: generate a real image of a human from this human pose image, or generate a new real image of a human from this pose. "
-                             "The input to this tool should be a comma seperated string of two, representing the image_path and the user description")]
+            # Tool(name="Generate Image Condition On Pose Image", func=self.pose2image.inference,
+            #      description="useful when you want to generate a new real image from both the user desciption and a human pose image. like: generate a real image of a human from this human pose image, or generate a new real image of a human from this pose. "
+            #                  "The input to this tool should be a comma seperated string of two, representing the image_path and the user description")
+            ]
         self.agent = initialize_agent(
             self.tools,
             self.llm,
