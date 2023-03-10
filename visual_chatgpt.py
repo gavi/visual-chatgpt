@@ -837,12 +837,12 @@ class ConversationBot:
                  description="useful when you want to replace an object from the object description or location with another object from its description. "
                              "The input to this tool should be a comma seperated string of three, representing the image_path, the object to be replaced, the object to be replaced with "),
 
-            Tool(name="Instruct Image Using Text", func=self.pix2pix.inference,
-                 description="useful when you want to the style of the image to be like the text. like: make it look like a painting. or make it like a robot. "
-                             "The input to this tool should be a comma seperated string of two, representing the image_path and the text. "),
-            Tool(name="Answer Question About The Image", func=self.BLIPVQA.get_answer_from_question_and_image,
-                 description="useful when you need an answer for a question based on an image. like: what is the background color of the last image, how many cats in this figure, what is in this figure. "
-                             "The input to this tool should be a comma seperated string of two, representing the image_path and the question"),
+            # Tool(name="Instruct Image Using Text", func=self.pix2pix.inference,
+            #      description="useful when you want to the style of the image to be like the text. like: make it look like a painting. or make it like a robot. "
+            #                  "The input to this tool should be a comma seperated string of two, representing the image_path and the text. "),
+            # Tool(name="Answer Question About The Image", func=self.BLIPVQA.get_answer_from_question_and_image,
+            #      description="useful when you need an answer for a question based on an image. like: what is the background color of the last image, how many cats in this figure, what is in this figure. "
+            #                  "The input to this tool should be a comma seperated string of two, representing the image_path and the question"),
             Tool(name="Edge Detection On Image", func=self.image2canny.inference,
                  description="useful when you want to detect the edge of the image. like: detect the edges of this image, or canny detection on image, or peform edge detection on this image, or detect the canny image of this image. "
                              "The input to this tool should be a string, representing the image_path"),
@@ -861,9 +861,9 @@ class ConversationBot:
             Tool(name="Generate Image Condition On Soft Hed Boundary Image", func=self.hed2image.inference,
                  description="useful when you want to generate a new real image from both the user desciption and a soft hed boundary image. like: generate a real image of a object or something from this soft hed boundary image, or generate a new real image of a object or something from this hed boundary. "
                              "The input to this tool should be a comma seperated string of two, representing the image_path and the user description"),
-            Tool(name="Segmentation On Image", func=self.image2seg.inference,
-                 description="useful when you want to detect segmentations of the image. like: segment this image, or generate segmentations on this image, or peform segmentation on this image. "
-                             "The input to this tool should be a string, representing the image_path"),
+            # Tool(name="Segmentation On Image", func=self.image2seg.inference,
+            #      description="useful when you want to detect segmentations of the image. like: segment this image, or generate segmentations on this image, or peform segmentation on this image. "
+            #                  "The input to this tool should be a string, representing the image_path"),
             # Tool(name="Generate Image Condition On Segmentations", func=self.seg2image.inference,
             #      description="useful when you want to generate a new real image from both the user desciption and segmentations. like: generate a real image of a object or something from this segmentation image, or generate a new real image of a object or something from these segmentations. "
             #                  "The input to this tool should be a comma seperated string of two, representing the image_path and the user description"),
