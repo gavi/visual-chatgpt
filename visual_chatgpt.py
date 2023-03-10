@@ -864,21 +864,21 @@ class ConversationBot:
             Tool(name="Segmentation On Image", func=self.image2seg.inference,
                  description="useful when you want to detect segmentations of the image. like: segment this image, or generate segmentations on this image, or peform segmentation on this image. "
                              "The input to this tool should be a string, representing the image_path"),
-            Tool(name="Generate Image Condition On Segmentations", func=self.seg2image.inference,
-                 description="useful when you want to generate a new real image from both the user desciption and segmentations. like: generate a real image of a object or something from this segmentation image, or generate a new real image of a object or something from these segmentations. "
-                             "The input to this tool should be a comma seperated string of two, representing the image_path and the user description"),
-            Tool(name="Predict Depth On Image", func=self.image2depth.inference,
-                 description="useful when you want to detect depth of the image. like: generate the depth from this image, or detect the depth map on this image, or predict the depth for this image. "
-                             "The input to this tool should be a string, representing the image_path"),
-            Tool(name="Generate Image Condition On Depth",  func=self.depth2image.inference,
-                 description="useful when you want to generate a new real image from both the user desciption and depth image. like: generate a real image of a object or something from this depth image, or generate a new real image of a object or something from the depth map. "
-                             "The input to this tool should be a comma seperated string of two, representing the image_path and the user description"),
-            Tool(name="Predict Normal Map On Image", func=self.image2normal.inference,
-                 description="useful when you want to detect norm map of the image. like: generate normal map from this image, or predict normal map of this image. "
-                             "The input to this tool should be a string, representing the image_path"),
-            Tool(name="Generate Image Condition On Normal Map", func=self.normal2image.inference,
-                 description="useful when you want to generate a new real image from both the user desciption and normal map. like: generate a real image of a object or something from this normal map, or generate a new real image of a object or something from the normal map. "
-                             "The input to this tool should be a comma seperated string of two, representing the image_path and the user description"),
+            # Tool(name="Generate Image Condition On Segmentations", func=self.seg2image.inference,
+            #      description="useful when you want to generate a new real image from both the user desciption and segmentations. like: generate a real image of a object or something from this segmentation image, or generate a new real image of a object or something from these segmentations. "
+            #                  "The input to this tool should be a comma seperated string of two, representing the image_path and the user description"),
+            # Tool(name="Predict Depth On Image", func=self.image2depth.inference,
+            #      description="useful when you want to detect depth of the image. like: generate the depth from this image, or detect the depth map on this image, or predict the depth for this image. "
+            #                  "The input to this tool should be a string, representing the image_path"),
+            # Tool(name="Generate Image Condition On Depth",  func=self.depth2image.inference,
+            #      description="useful when you want to generate a new real image from both the user desciption and depth image. like: generate a real image of a object or something from this depth image, or generate a new real image of a object or something from the depth map. "
+            #                  "The input to this tool should be a comma seperated string of two, representing the image_path and the user description"),
+            # Tool(name="Predict Normal Map On Image", func=self.image2normal.inference,
+            #      description="useful when you want to detect norm map of the image. like: generate normal map from this image, or predict normal map of this image. "
+            #                  "The input to this tool should be a string, representing the image_path"),
+            # Tool(name="Generate Image Condition On Normal Map", func=self.normal2image.inference,
+            #      description="useful when you want to generate a new real image from both the user desciption and normal map. like: generate a real image of a object or something from this normal map, or generate a new real image of a object or something from the normal map. "
+            #                  "The input to this tool should be a comma seperated string of two, representing the image_path and the user description"),
             Tool(name="Sketch Detection On Image", func=self.image2scribble.inference,
                  description="useful when you want to generate a scribble of the image. like: generate a scribble of this image, or generate a sketch from this image, detect the sketch from this image. "
                              "The input to this tool should be a string, representing the image_path"),
